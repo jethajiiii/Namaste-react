@@ -1,17 +1,37 @@
-    //REACT IS A LIBRARY WHICH CAN WORK INDEPENDENTELY IN A SMALL PORTION OF YOUR CODE
+             //REACT IS A LIBRARY WHICH CAN WORK INDEPENDENTELY IN A SMALL PORTION OF YOUR CODE
+
+import React from "react";
+import ReactDOM from "react-dom/client";
 
 
+const heading = React.createElement('h1', {id:'heading'}, "Namaste Jethajiiii");
+// WHEN WE RENDER THIS TO DOM IT WILL CREATE A HTML ELEMENT
 
-const heading = React.createElement('h1', {id: 'heading'}, ['hello world from react', ' we can also pass an  array']);
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-    console.log(heading) // OBJECT
-        root.render(heading);  
+                // JSX --[HTML like syntax] {jsx code id converted to React code by parcel-[Babel]}
 
-           //RENDER 
-    // TAKE THE OBJECT, CONVERT((replace) INTO HEADING TAG AND PUT IT INTO THE DOM
 
-    const parent = React.createElement('div', {id:'heading'}, [
-        React.createElement('h1', {id:'heading1'}, 'i am heading one'),
-        React.createElement('h2', {id:'heading1'}, 'i am heading two'),
-        React.createElement('h2', {id:'heading1'}, 'i am heading three')
-    ])
+                // React Element
+
+const Title = () =>(
+<h1 id="heading" className="h1">Namasate react  Using JSX</h1>
+);
+
+                // React Functional Component  ==========>  IT IS A JavaScript FUNCTION THAT RETURNS A PEICE OF JSX CODE
+const number = 10000
+const HeadingComponent = () => (
+    <div id="container">
+        {/* [it is component composition] */}
+        <Title/>   
+        {Title()}
+        <Title></Title>
+        
+        <h1 className="heading">Namaste React from Functional Component</h1>
+    </div>
+);
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<HeadingComponent />)  // everything is replaced from root in index.html
+
+        
+
